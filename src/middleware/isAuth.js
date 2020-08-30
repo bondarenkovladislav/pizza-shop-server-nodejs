@@ -12,7 +12,7 @@ const getTokenFromHeader = (req) => {
 
 module.exports = jwt({
   secret: keys.SESSION_SECRET,
-  userProperty: "token",
+  userProperty: "tokenData",
   algorithms: ['HS256'],
   getToken: getTokenFromHeader,
 });
