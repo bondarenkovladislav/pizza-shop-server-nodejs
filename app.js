@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const keys = require("./keys");
 const pizzaRouter = require("./routes/pizza");
 const authRouter = require("./routes/auth");
+const graphQlRouter = require('./routes/graphqlroute')
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -20,6 +21,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/pizza", pizzaRouter);
 app.use("/auth", authRouter);
+app.use(graphQlRouter);
 
 (async function () {
   try {
